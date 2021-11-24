@@ -1,0 +1,26 @@
+sanskrit7
+
+This program converts from a 7 bit ASCII transliteration of Sanskrit into
+the International Alphabet for Sanskrit Transliteration (IAST), represented
+using Unicode.
+
+The 7 bit transliteration is a non-standard scheme used by Jeroen Hellingman
+at Distributed Proofreaders (https://www.pgdp.net). It is not the same as the
+7 bit encoding defined in ISO 15919 "Transliteration of Devanagari and related
+Indic scripts into Latin characters".
+
+The characters to be converted are expected to be encoded between a start
+tag ("[SA:", "[DV:", or "[HI:") and an end tag ("]"). Characters in the input
+that are not enclosed bewteen these tags are passed through unchanged, discarded,
+or converted to upper case, depending on the command line options (see below).
+
+(SA stands for Sanskrit, DV stands for Devanagari, and HI stands for Hindi.
+This program treats them identically, but later stages in a processing pipeline
+might want to treat Sanskrit and Hindi differently).
+
+Command line options:
+
+-a Characters that are not between tags are copied to the output
+-u Characters that are not between tags are converted to upper case and copied
+   to the output
+-t The tags are copied to the output
